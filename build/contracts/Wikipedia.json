@@ -1,0 +1,2145 @@
+{
+  "contractName": "Wikipedia",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "heading",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "images",
+          "type": "string"
+        }
+      ],
+      "name": "wikiCreated",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "wikiCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "wikiMap",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "heading",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "images",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_header",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_images",
+          "type": "string"
+        }
+      ],
+      "name": "createWiki",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"heading\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"images\",\"type\":\"string\"}],\"name\":\"wikiCreated\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_header\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_images\",\"type\":\"string\"}],\"name\":\"createWiki\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"wikiCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"wikiMap\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"heading\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"images\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Wikipedia.sol\":\"Wikipedia\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Wikipedia.sol\":{\"keccak256\":\"0x7bf433fb4db25ffe0552c17d3bfa47b241c086d1f11d7dcf93985a498f8c765d\",\"urls\":[\"bzz-raw://1a1db7e336bb6a5b47f2c5ae2c089cd58e4ab887885dcee3bf61cd0540f1abb6\",\"dweb:/ipfs/Qmb2DWAQiMHACWpm6HjsF73CstNQv772kW4HspkCag1wz4\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600080553480156200001557600080fd5b5062000082604051806040016040528060098152602001684d696c6b792057617960b81b8152506040518061052001604052806104f48152602001620009ec6104f49139604051806080016040528060438152602001620009a9604391396001600160e01b036200008816565b620002fe565b600080546001908101808355604080516080810182528281526020808201898152828401899052606083018890529386528481529190942084518155915180519293620000de9390850192919091019062000164565b5060408201518051620000fc91600284019160209091019062000164565b50606082015180516200011a91600384019160209091019062000164565b509050507f30cb0e8cb076b725d56bc448c80136c801e50de7d0df7b67e636a6145428f8246000548484846040516200015794939291906200025a565b60405180910390a1505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10620001a757805160ff1916838001178555620001d7565b82800160010185558215620001d7579182015b82811115620001d7578251825591602001919060010190620001ba565b50620001e5929150620001e9565b5090565b6200020691905b80821115620001e55760008155600101620001f0565b90565b60006200021682620002b4565b620002228185620002b8565b935062000234818560208601620002c1565b6200023f81620002f4565b9093019392505050565b620002548162000206565b82525050565b608081016200026a828762000249565b81810360208301526200027e818662000209565b9050818103604083015262000294818562000209565b90508181036060830152620002aa818462000209565b9695505050505050565b5190565b90815260200190565b60005b83811015620002de578181015183820152602001620002c4565b83811115620002ee576000848401525b50505050565b601f01601f191690565b61069b806200030e6000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063094f9af8146100465780632ccbc78314610064578063cf74861b14610079575b600080fd5b61004e61009c565b60405161005b919061053f565b60405180910390f35b61007761007236600461043e565b6100a2565b005b61008c6100873660046104d2565b610176565b60405161005b949392919061054d565b60005481565b6000805460019081018083556040805160808101825282815260208082018981528284018990526060830188905293865284815291909420845181559151805192936100f69390850192919091019061033e565b506040820151805161011291600284019160209091019061033e565b506060820151805161012e91600384019160209091019061033e565b509050507f30cb0e8cb076b725d56bc448c80136c801e50de7d0df7b67e636a6145428f824600054848484604051610169949392919061054d565b60405180910390a1505050565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102125780601f106101e757610100808354040283529160200191610212565b820191906000526020600020905b8154815290600101906020018083116101f557829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156102a45780601f10610279576101008083540402835291602001916102a4565b820191906000526020600020905b81548152906001019060200180831161028757829003601f168201915b5050505060038301805460408051602060026001851615610100026000190190941693909304601f81018490048402820184019092528181529495949350908301828280156103345780601f1061030957610100808354040283529160200191610334565b820191906000526020600020905b81548152906001019060200180831161031757829003601f168201915b5050505050905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061037f57805160ff19168380011785556103ac565b828001600101855582156103ac579182015b828111156103ac578251825591602001919060010190610391565b506103b89291506103bc565b5090565b6103d691905b808211156103b857600081556001016103c2565b90565b600082601f8301126103ea57600080fd5b81356103fd6103f8826105c6565b61059f565b9150808252602083016020830185838301111561041957600080fd5b6104248382846105fb565b50505092915050565b803561043881610641565b92915050565b60008060006060848603121561045357600080fd5b833567ffffffffffffffff81111561046a57600080fd5b610476868287016103d9565b935050602084013567ffffffffffffffff81111561049357600080fd5b61049f868287016103d9565b925050604084013567ffffffffffffffff8111156104bc57600080fd5b6104c8868287016103d9565b9150509250925092565b6000602082840312156104e457600080fd5b60006104f0848461042d565b949350505050565b6000610503826105ee565b61050d81856105f2565b935061051d818560208601610607565b61052681610637565b9093019392505050565b610539816103d6565b82525050565b602081016104388284610530565b6080810161055b8287610530565b818103602083015261056d81866104f8565b9050818103604083015261058181856104f8565b9050818103606083015261059581846104f8565b9695505050505050565b60405181810167ffffffffffffffff811182821017156105be57600080fd5b604052919050565b600067ffffffffffffffff8211156105dd57600080fd5b506020601f91909101601f19160190565b5190565b90815260200190565b82818337506000910152565b60005b8381101561062257818101518382015260200161060a565b83811115610631576000848401525b50505050565b601f01601f191690565b61064a816103d6565b811461065557600080fd5b5056fea365627a7a72315820bda55db1af07f98f519f0f68c77554afbf4f6e6f4c01059250c8afa0b4af90616c6578706572696d656e74616cf564736f6c6343000510004068747470733a2f2f63646e2e706978616261792e636f6d2f70686f746f2f323031352f30342f32332f32322f30302f747265652d3733363838355f5f3438302e6a7067497420697320657374696d6174656420746f20636f6e7461696e20313030e280933430302062696c6c696f6e20737461727320616e64206174206c656173742074686174206e756d626572206f6620706c616e6574732e54686520536f6c61722053797374656d206973206c6f6361746564206174206120726164697573206f662061626f75742032372c303030206c696768742d79656172732066726f6d207468652047616c61637469632043656e7465722c206f6e2074686520696e6e65722065646765206f6620746865204f72696f6e2041726d2c206f6e65206f66207468652073706972616c2d73686170656420636f6e63656e74726174696f6e73206f662067617320616e6420647573742e2054686520737461727320696e2074686520696e6e65726d6f73742031302c303030206c696768742d796561727320666f726d20612062756c676520616e64206f6e65206f72206d6f72652062617273207468617420726164696174652066726f6d207468652062756c67652e205468652067616c61637469632063656e74657220697320616e20696e74656e736520726164696f20736f75726365206b6e6f776e20617320536167697474617269757320412a2c206173757065726d61737369766520626c61636b20686f6c65206f6620342e3130302028c2b120302e30333429206d696c6c696f6e20736f6c6172206d61737365732e20537461727320616e64206761736573206174206120776964652072616e6765206f662064697374616e6365732066726f6d207468652047616c61637469632043656e746572206f7262697420617420617070726f78696d6174656c7920323230206b696c6f6d657465727320706572207365636f6e642e2054686520636f6e7374616e7420726f746174696f6e20737065656420636f6e747261646963747320746865206c617773206f66204b65706c657269616e2064796e616d69637320616e642073756767657374732074686174206d756368202861626f75742039302529206f6620746865206d617373206f6620746865204d696c6b792057617920697320696e76697369626c6520746f2074656c6573636f7065732c206e65697468657220656d697474696e67206e6f72206162736f7262696e6720656c656374726f6d61676e6574696320726164696174696f6e2e205468697320636f6e6a6563747572616c206d61737320686173206265656e207465726d6564206461726b206d61747465722e2054686520726f746174696f6e616c20706572696f642069732061626f757420323430206d696c6c696f6e2079656172732061742074686520726164697573206f66207468652053756e2e20546865204d696c6b792057617920617320612077686f6c65206973206d6f76696e6720617420612076656c6f63697479206f6620617070726f78696d6174656c7920363030206b6d20706572207365636f6e642077697468207265737065637420746f20657874726167616c6163746963206672616d6573206f66207265666572656e63652e20546865206f6c6465737420737461727320696e20746865204d696c6b792057617920617265206e6561726c79206173206f6c642061732074686520556e69766572736520697473656c6620616e6420746875732070726f6261626c7920666f726d65642073686f72746c7920616674657220746865204461726b2041676573206f6620746865204269672042616e672e",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063094f9af8146100465780632ccbc78314610064578063cf74861b14610079575b600080fd5b61004e61009c565b60405161005b919061053f565b60405180910390f35b61007761007236600461043e565b6100a2565b005b61008c6100873660046104d2565b610176565b60405161005b949392919061054d565b60005481565b6000805460019081018083556040805160808101825282815260208082018981528284018990526060830188905293865284815291909420845181559151805192936100f69390850192919091019061033e565b506040820151805161011291600284019160209091019061033e565b506060820151805161012e91600384019160209091019061033e565b509050507f30cb0e8cb076b725d56bc448c80136c801e50de7d0df7b67e636a6145428f824600054848484604051610169949392919061054d565b60405180910390a1505050565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102125780601f106101e757610100808354040283529160200191610212565b820191906000526020600020905b8154815290600101906020018083116101f557829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156102a45780601f10610279576101008083540402835291602001916102a4565b820191906000526020600020905b81548152906001019060200180831161028757829003601f168201915b5050505060038301805460408051602060026001851615610100026000190190941693909304601f81018490048402820184019092528181529495949350908301828280156103345780601f1061030957610100808354040283529160200191610334565b820191906000526020600020905b81548152906001019060200180831161031757829003601f168201915b5050505050905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061037f57805160ff19168380011785556103ac565b828001600101855582156103ac579182015b828111156103ac578251825591602001919060010190610391565b506103b89291506103bc565b5090565b6103d691905b808211156103b857600081556001016103c2565b90565b600082601f8301126103ea57600080fd5b81356103fd6103f8826105c6565b61059f565b9150808252602083016020830185838301111561041957600080fd5b6104248382846105fb565b50505092915050565b803561043881610641565b92915050565b60008060006060848603121561045357600080fd5b833567ffffffffffffffff81111561046a57600080fd5b610476868287016103d9565b935050602084013567ffffffffffffffff81111561049357600080fd5b61049f868287016103d9565b925050604084013567ffffffffffffffff8111156104bc57600080fd5b6104c8868287016103d9565b9150509250925092565b6000602082840312156104e457600080fd5b60006104f0848461042d565b949350505050565b6000610503826105ee565b61050d81856105f2565b935061051d818560208601610607565b61052681610637565b9093019392505050565b610539816103d6565b82525050565b602081016104388284610530565b6080810161055b8287610530565b818103602083015261056d81866104f8565b9050818103604083015261058181856104f8565b9050818103606083015261059581846104f8565b9695505050505050565b60405181810167ffffffffffffffff811182821017156105be57600080fd5b604052919050565b600067ffffffffffffffff8211156105dd57600080fd5b506020601f91909101601f19160190565b5190565b90815260200190565b82818337506000910152565b60005b8381101561062257818101518382015260200161060a565b83811115610631576000848401525b50505050565b601f01601f191690565b61064a816103d6565b811461065557600080fd5b5056fea365627a7a72315820bda55db1af07f98f519f0f68c77554afbf4f6e6f4c01059250c8afa0b4af90616c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "62:1967:1:-;;;110:1;86:25;;366:1398;8:9:-1;5:2;;;30:1;27;20:12;5:2;366:1398:1;394:1364;;;;;;;;;;;;;;-1:-1:-1;;;394:1364:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;394:10:1;:1364;:::i;:::-;62:1967;;1770:254;1874:9;:11;;;;;;;;;1913:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1892:18;;;;;;;;;;:64;;;;;;;;:18;;:64;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1892:64:1;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1892:64:1;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;1968:50;1980:9;;1991:7;2000:8;2010:7;1968:50;;;;;;;;;;;;;;;;;;1770:254;;;:::o;62:1967::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1967:1;;;-1:-1:-1;62:1967:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;5:347:-1:-;;117:39;150:5;117:39;;;168:71;232:6;227:3;168:71;;;161:78;;244:52;289:6;284:3;277:4;270:5;266:16;244:52;;;317:29;339:6;317:29;;;308:39;;;;97:255;-1:-1;;;97:255;359:113;442:24;460:5;442:24;;;437:3;430:37;424:48;;;479:811;741:3;726:19;;756:71;730:9;800:6;756:71;;;875:9;869:4;865:20;860:2;849:9;845:18;838:48;900:78;973:4;964:6;900:78;;;892:86;;1026:9;1020:4;1016:20;1011:2;1000:9;996:18;989:48;1051:78;1124:4;1115:6;1051:78;;;1043:86;;1177:9;1171:4;1167:20;1162:2;1151:9;1147:18;1140:48;1202:78;1275:4;1266:6;1202:78;;;1194:86;712:578;-1:-1;;;;;;712:578;1297:122;1385:12;;1356:63;1427:163;1530:19;;;1579:4;1570:14;;1523:67;1678:268;1743:1;1750:101;1764:6;1761:1;1758:13;1750:101;;;1831:11;;;1825:18;1812:11;;;1805:39;1786:2;1779:10;1750:101;;;1866:6;1863:1;1860:13;1857:2;;;1931:1;1922:6;1917:3;1913:16;1906:27;1857:2;1727:219;;;;;1954:97;2042:2;2022:14;-1:-1;;2018:28;;2002:49;;62:1967:1;;;;;;",
+  "deployedSourceMap": "62:1967:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:1967:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;86:25;;;:::i;:::-;;;;;;;;;;;;;;;;1770:254;;;;;;;;;:::i;:::-;;218:36;;;;;;;;;:::i;:::-;;;;;;;;;;;86:25;;;;:::o;1770:254::-;1874:9;:11;;;;;;;;;1913:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1892:18;;;;;;;;;;:64;;;;;;;;:18;;:64;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1892:64:1;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;1892:64:1;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;1968:50;1980:9;;1991:7;2000:8;2010:7;1968:50;;;;;;;;;;;;;;;;;;1770:254;;;:::o;218:36::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;218:36:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;218:36:1;;;;;;;;;;;-1:-1:-1;;218:36:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;218:36:1;;-1:-1:-1;218:36:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;218:36:1;;;;;;;;;;;;;;;;-1:-1:-1;;218:36:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;218:36:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;62:1967::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;62:1967:1;;;-1:-1:-1;62:1967:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;6:442:-1:-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:130;523:20;;548:33;523:20;548:33;;;508:78;;;;;593:809;;;;761:2;749:9;740:7;736:23;732:32;729:2;;;777:1;774;767:12;729:2;812:31;;863:18;852:30;;849:2;;;895:1;892;885:12;849:2;915:63;970:7;961:6;950:9;946:22;915:63;;;905:73;;791:193;1043:2;1032:9;1028:18;1015:32;1067:18;1059:6;1056:30;1053:2;;;1099:1;1096;1089:12;1053:2;1119:63;1174:7;1165:6;1154:9;1150:22;1119:63;;;1109:73;;994:194;1247:2;1236:9;1232:18;1219:32;1271:18;1263:6;1260:30;1257:2;;;1303:1;1300;1293:12;1257:2;1323:63;1378:7;1369:6;1358:9;1354:22;1323:63;;;1313:73;;1198:194;723:679;;;;;;1409:241;;1513:2;1501:9;1492:7;1488:23;1484:32;1481:2;;;1529:1;1526;1519:12;1481:2;1564:1;1581:53;1626:7;1606:9;1581:53;;;1571:63;1475:175;-1:-1;;;;1475:175;1657:347;;1769:39;1802:5;1769:39;;;1820:71;1884:6;1879:3;1820:71;;;1813:78;;1896:52;1941:6;1936:3;1929:4;1922:5;1918:16;1896:52;;;1969:29;1991:6;1969:29;;;1960:39;;;;1749:255;-1:-1;;;1749:255;2357:113;2440:24;2458:5;2440:24;;;2435:3;2428:37;2422:48;;;2477:213;2595:2;2580:18;;2609:71;2584:9;2653:6;2609:71;;2697:811;2959:3;2944:19;;2974:71;2948:9;3018:6;2974:71;;;3093:9;3087:4;3083:20;3078:2;3067:9;3063:18;3056:48;3118:78;3191:4;3182:6;3118:78;;;3110:86;;3244:9;3238:4;3234:20;3229:2;3218:9;3214:18;3207:48;3269:78;3342:4;3333:6;3269:78;;;3261:86;;3395:9;3389:4;3385:20;3380:2;3369:9;3365:18;3358:48;3420:78;3493:4;3484:6;3420:78;;;3412:86;2930:578;-1:-1;;;;;;2930:578;4309:256;4371:2;4365:9;4397:17;;;4472:18;4457:34;;4493:22;;;4454:62;4451:2;;;4529:1;4526;4519:12;4451:2;4545;4538:22;4349:216;;-1:-1;4349:216;4572:322;;4716:18;4708:6;4705:30;4702:2;;;4748:1;4745;4738:12;4702:2;-1:-1;4879:4;4815;4792:17;;;;-1:-1;;4788:33;4869:15;;4639:255;4901:118;4985:12;;4956:63;5156:163;5259:19;;;5308:4;5299:14;;5252:67;5407:145;5488:6;5483:3;5478;5465:30;-1:-1;5544:1;5526:16;;5519:27;5458:94;5561:268;5626:1;5633:101;5647:6;5644:1;5641:13;5633:101;;;5714:11;;;5708:18;5695:11;;;5688:39;5669:2;5662:10;5633:101;;;5749:6;5746:1;5743:13;5740:2;;;5814:1;5805:6;5800:3;5796:16;5789:27;5740:2;5610:219;;;;;5837:97;5925:2;5905:14;-1:-1;;5901:28;;5885:49;5942:117;6011:24;6029:5;6011:24;;;6004:5;6001:35;5991:2;;6050:1;6047;6040:12;5991:2;5985:74;",
+  "source": "pragma solidity ^0.5.0;\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract Wikipedia {\r\n  uint public wikiCount = 0;\r\n\r\n  struct wiki {\r\n    uint id;\r\n    string heading;\r\n    string content;\r\n    string images;\r\n  }\r\n\r\n  mapping(uint => wiki) public wikiMap;\r\n\r\n  event wikiCreated(\r\n    uint id,\r\n    string heading,\r\n    string content,\r\n    string images\r\n  );\r\n\r\n  constructor() public {\r\n    createWiki(\"Milky Way\",\"It is estimated to contain 100–400 billion stars and at least that number of planets.The Solar System is located at a radius of about 27,000 light-years from the Galactic Center, on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust. The stars in the innermost 10,000 light-years form a bulge and one or more bars that radiate from the bulge. The galactic center is an intense radio source known as Sagittarius A*, asupermassive black hole of 4.100 (± 0.034) million solar masses. Stars and gases at a wide range of distances from the Galactic Center orbit at approximately 220 kilometers per second. The constant rotation speed contradicts the laws of Keplerian dynamics and suggests that much (about 90%) of the mass of the Milky Way is invisible to telescopes, neither emitting nor absorbing electromagnetic radiation. This conjectural mass has been termed dark matter. The rotational period is about 240 million years at the radius of the Sun. The Milky Way as a whole is moving at a velocity of approximately 600 km per second with respect to extragalactic frames of reference. The oldest stars in the Milky Way are nearly as old as the Universe itself and thus probably formed shortly after the Dark Ages of the Big Bang.\",\"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg\");\r\n  }\r\n\r\n  function createWiki(string memory _header, string memory _content, string memory _images) public {\r\n    wikiCount++;\r\n    wikiMap[wikiCount] = wiki(wikiCount, _header, _content, _images);\r\n    emit wikiCreated(wikiCount, _header, _content, _images);\r\n  }\r\n\r\n}\r\n",
+  "sourcePath": "D:\\Decentralized Wikipedia\\contracts\\Wikipedia.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Wikipedia.sol",
+    "exportedSymbols": {
+      "Wikipedia": [
+        103
+      ]
+    },
+    "id": 104,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "id": 35,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "25:33:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 103,
+        "linearizedBaseContracts": [
+          103
+        ],
+        "name": "Wikipedia",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 38,
+            "name": "wikiCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 103,
+            "src": "86:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 36,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "86:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 37,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "110:1:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Wikipedia.wiki",
+            "id": 47,
+            "members": [
+              {
+                "constant": false,
+                "id": 40,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 47,
+                "src": "137:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 39,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "137:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 42,
+                "name": "heading",
+                "nodeType": "VariableDeclaration",
+                "scope": 47,
+                "src": "151:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 41,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "151:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 44,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 47,
+                "src": "172:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 43,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "172:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 46,
+                "name": "images",
+                "nodeType": "VariableDeclaration",
+                "scope": 47,
+                "src": "193:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 45,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "193:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "wiki",
+            "nodeType": "StructDefinition",
+            "scope": 103,
+            "src": "118:94:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 51,
+            "name": "wikiMap",
+            "nodeType": "VariableDeclaration",
+            "scope": 103,
+            "src": "218:36:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_wiki_$47_storage_$",
+              "typeString": "mapping(uint256 => struct Wikipedia.wiki)"
+            },
+            "typeName": {
+              "id": 50,
+              "keyType": {
+                "id": 48,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "226:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "218:21:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_wiki_$47_storage_$",
+                "typeString": "mapping(uint256 => struct Wikipedia.wiki)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 49,
+                "name": "wiki",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 47,
+                "src": "234:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_wiki_$47_storage_ptr",
+                  "typeString": "struct Wikipedia.wiki"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 61,
+            "name": "wikiCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "285:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 52,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "285:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 55,
+                  "indexed": false,
+                  "name": "heading",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "299:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 54,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "320:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 56,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "320:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 59,
+                  "indexed": false,
+                  "name": "images",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "341:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 58,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "341:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "278:81:1"
+            },
+            "src": "261:99:1"
+          },
+          {
+            "body": {
+              "id": 70,
+              "nodeType": "Block",
+              "src": "387:1377:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d696c6b7920576179",
+                        "id": 65,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "405:11:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_173f39244738b105fa912e9df40f93b31e6697e19df000fed9f5fff1b0d09add",
+                          "typeString": "literal_string \"Milky Way\""
+                        },
+                        "value": "Milky Way"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "497420697320657374696d6174656420746f20636f6e7461696e20313030e280933430302062696c6c696f6e20737461727320616e64206174206c656173742074686174206e756d626572206f6620706c616e6574732e54686520536f6c61722053797374656d206973206c6f6361746564206174206120726164697573206f662061626f75742032372c303030206c696768742d79656172732066726f6d207468652047616c61637469632043656e7465722c206f6e2074686520696e6e65722065646765206f6620746865204f72696f6e2041726d2c206f6e65206f66207468652073706972616c2d73686170656420636f6e63656e74726174696f6e73206f662067617320616e6420647573742e2054686520737461727320696e2074686520696e6e65726d6f73742031302c303030206c696768742d796561727320666f726d20612062756c676520616e64206f6e65206f72206d6f72652062617273207468617420726164696174652066726f6d207468652062756c67652e205468652067616c61637469632063656e74657220697320616e20696e74656e736520726164696f20736f75726365206b6e6f776e20617320536167697474617269757320412a2c206173757065726d61737369766520626c61636b20686f6c65206f6620342e3130302028c2b120302e30333429206d696c6c696f6e20736f6c6172206d61737365732e20537461727320616e64206761736573206174206120776964652072616e6765206f662064697374616e6365732066726f6d207468652047616c61637469632043656e746572206f7262697420617420617070726f78696d6174656c7920323230206b696c6f6d657465727320706572207365636f6e642e2054686520636f6e7374616e7420726f746174696f6e20737065656420636f6e747261646963747320746865206c617773206f66204b65706c657269616e2064796e616d69637320616e642073756767657374732074686174206d756368202861626f75742039302529206f6620746865206d617373206f6620746865204d696c6b792057617920697320696e76697369626c6520746f2074656c6573636f7065732c206e65697468657220656d697474696e67206e6f72206162736f7262696e6720656c656374726f6d61676e6574696320726164696174696f6e2e205468697320636f6e6a6563747572616c206d61737320686173206265656e207465726d6564206461726b206d61747465722e2054686520726f746174696f6e616c20706572696f642069732061626f757420323430206d696c6c696f6e2079656172732061742074686520726164697573206f66207468652053756e2e20546865204d696c6b792057617920617320612077686f6c65206973206d6f76696e6720617420612076656c6f63697479206f6620617070726f78696d6174656c7920363030206b6d20706572207365636f6e642077697468207265737065637420746f20657874726167616c6163746963206672616d6573206f66207265666572656e63652e20546865206f6c6465737420737461727320696e20746865204d696c6b792057617920617265206e6561726c79206173206f6c642061732074686520556e69766572736520697473656c6620616e6420746875732070726f6261626c7920666f726d65642073686f72746c7920616674657220746865204461726b2041676573206f6620746865204269672042616e672e",
+                        "id": 66,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "417:1270:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_748f95a39f3316bf5a708064d7eeb41225d23527c4c38bbb46504552c1b389d7",
+                          "typeString": "literal_string \"It is estimated to contain 100–400 billion stars and at least that number of planets.The Solar System is located at a radius of about 27,000 light-years from the Galactic Center, on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust. The stars in the innermost 10,000 light-years form a bulge and one or more bars that radiate from the bulge. The galactic center is an intense radio source known as Sagittarius A*, asupermassive black hole of 4.100 (± 0.034) million solar masses. Stars and gases at a wide range of distances from the Galactic Center orbit at approximately 220 kilometers per second. The constant rotation speed contradicts the laws of Keplerian dynamics and suggests that much (about 90%) of the mass of the Milky Way is invisible to telescopes, neither emitting nor absorbing electromagnetic radiation. This conjectural mass has been termed dark matter. The rotational period is about 240 million years at the radius of the Sun. The Milky Way as a whole is moving at a velocity of approximately 600 km per second with respect to extragalactic frames of reference. The oldest stars in the Milky Way are nearly as old as the Universe itself and thus probably formed shortly after the Dark Ages of the Big Bang.\""
+                        },
+                        "value": "It is estimated to contain 100–400 billion stars and at least that number of planets.The Solar System is located at a radius of about 27,000 light-years from the Galactic Center, on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust. The stars in the innermost 10,000 light-years form a bulge and one or more bars that radiate from the bulge. The galactic center is an intense radio source known as Sagittarius A*, asupermassive black hole of 4.100 (± 0.034) million solar masses. Stars and gases at a wide range of distances from the Galactic Center orbit at approximately 220 kilometers per second. The constant rotation speed contradicts the laws of Keplerian dynamics and suggests that much (about 90%) of the mass of the Milky Way is invisible to telescopes, neither emitting nor absorbing electromagnetic radiation. This conjectural mass has been termed dark matter. The rotational period is about 240 million years at the radius of the Sun. The Milky Way as a whole is moving at a velocity of approximately 600 km per second with respect to extragalactic frames of reference. The oldest stars in the Milky Way are nearly as old as the Universe itself and thus probably formed shortly after the Dark Ages of the Big Bang."
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "68747470733a2f2f63646e2e706978616261792e636f6d2f70686f746f2f323031352f30342f32332f32322f30302f747265652d3733363838355f5f3438302e6a7067",
+                        "id": 67,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1688:69:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_246c219d7d5e4988b5c5598deebcf205054765a8bbb3fdd96f86a93543266503",
+                          "typeString": "literal_string \"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg\""
+                        },
+                        "value": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_173f39244738b105fa912e9df40f93b31e6697e19df000fed9f5fff1b0d09add",
+                          "typeString": "literal_string \"Milky Way\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_748f95a39f3316bf5a708064d7eeb41225d23527c4c38bbb46504552c1b389d7",
+                          "typeString": "literal_string \"It is estimated to contain 100–400 billion stars and at least that number of planets.The Solar System is located at a radius of about 27,000 light-years from the Galactic Center, on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust. The stars in the innermost 10,000 light-years form a bulge and one or more bars that radiate from the bulge. The galactic center is an intense radio source known as Sagittarius A*, asupermassive black hole of 4.100 (± 0.034) million solar masses. Stars and gases at a wide range of distances from the Galactic Center orbit at approximately 220 kilometers per second. The constant rotation speed contradicts the laws of Keplerian dynamics and suggests that much (about 90%) of the mass of the Milky Way is invisible to telescopes, neither emitting nor absorbing electromagnetic radiation. This conjectural mass has been termed dark matter. The rotational period is about 240 million years at the radius of the Sun. The Milky Way as a whole is moving at a velocity of approximately 600 km per second with respect to extragalactic frames of reference. The oldest stars in the Milky Way are nearly as old as the Universe itself and thus probably formed shortly after the Dark Ages of the Big Bang.\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_246c219d7d5e4988b5c5598deebcf205054765a8bbb3fdd96f86a93543266503",
+                          "typeString": "literal_string \"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg\""
+                        }
+                      ],
+                      "id": 64,
+                      "name": "createWiki",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 102,
+                      "src": "394:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory)"
+                      }
+                    },
+                    "id": 68,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "394:1364:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 69,
+                  "nodeType": "ExpressionStatement",
+                  "src": "394:1364:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 71,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 62,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "377:2:1"
+            },
+            "returnParameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "387:0:1"
+            },
+            "scope": 103,
+            "src": "366:1398:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 101,
+              "nodeType": "Block",
+              "src": "1867:157:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 81,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "1874:11:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 80,
+                      "name": "wikiCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 38,
+                      "src": "1874:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 82,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1874:11:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 92,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 83,
+                        "name": "wikiMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 51,
+                        "src": "1892:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_wiki_$47_storage_$",
+                          "typeString": "mapping(uint256 => struct Wikipedia.wiki storage ref)"
+                        }
+                      },
+                      "id": 85,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 84,
+                        "name": "wikiCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 38,
+                        "src": "1900:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1892:18:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_wiki_$47_storage",
+                        "typeString": "struct Wikipedia.wiki storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 87,
+                          "name": "wikiCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 38,
+                          "src": "1918:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 88,
+                          "name": "_header",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 73,
+                          "src": "1929:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "_content",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 75,
+                          "src": "1938:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 90,
+                          "name": "_images",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 77,
+                          "src": "1948:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 86,
+                        "name": "wiki",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "1913:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_wiki_$47_storage_ptr_$",
+                          "typeString": "type(struct Wikipedia.wiki storage pointer)"
+                        }
+                      },
+                      "id": 91,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1913:43:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_wiki_$47_memory",
+                        "typeString": "struct Wikipedia.wiki memory"
+                      }
+                    },
+                    "src": "1892:64:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_wiki_$47_storage",
+                      "typeString": "struct Wikipedia.wiki storage ref"
+                    }
+                  },
+                  "id": 93,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1892:64:1"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 95,
+                        "name": "wikiCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 38,
+                        "src": "1980:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 96,
+                        "name": "_header",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 73,
+                        "src": "1991:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 97,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 75,
+                        "src": "2000:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 98,
+                        "name": "_images",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 77,
+                        "src": "2010:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 94,
+                      "name": "wikiCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 61,
+                      "src": "1968:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,string memory,string memory,string memory)"
+                      }
+                    },
+                    "id": 99,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1968:50:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 100,
+                  "nodeType": "EmitStatement",
+                  "src": "1963:55:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 102,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createWiki",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 73,
+                  "name": "_header",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 102,
+                  "src": "1790:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 72,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1790:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 75,
+                  "name": "_content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 102,
+                  "src": "1813:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 74,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1813:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 77,
+                  "name": "_images",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 102,
+                  "src": "1837:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 76,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1837:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1789:70:1"
+            },
+            "returnParameters": {
+              "id": 79,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1867:0:1"
+            },
+            "scope": 103,
+            "src": "1770:254:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 104,
+        "src": "62:1967:1"
+      }
+    ],
+    "src": "0:2031:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Wikipedia.sol",
+      "exportedSymbols": {
+        "Wikipedia": [
+          103
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 34,
+        "name": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 35,
+        "name": "PragmaDirective",
+        "src": "25:33:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            103
+          ],
+          "name": "Wikipedia",
+          "scope": 104
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "wikiCount",
+              "scope": 103,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 36,
+                "name": "ElementaryTypeName",
+                "src": "86:4:1"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "30",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 0",
+                  "value": "0"
+                },
+                "id": 37,
+                "name": "Literal",
+                "src": "110:1:1"
+              }
+            ],
+            "id": 38,
+            "name": "VariableDeclaration",
+            "src": "86:25:1"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Wikipedia.wiki",
+              "name": "wiki",
+              "scope": 103,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "id",
+                  "scope": 47,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 39,
+                    "name": "ElementaryTypeName",
+                    "src": "137:4:1"
+                  }
+                ],
+                "id": 40,
+                "name": "VariableDeclaration",
+                "src": "137:7:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "heading",
+                  "scope": 47,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 41,
+                    "name": "ElementaryTypeName",
+                    "src": "151:6:1"
+                  }
+                ],
+                "id": 42,
+                "name": "VariableDeclaration",
+                "src": "151:14:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "content",
+                  "scope": 47,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 43,
+                    "name": "ElementaryTypeName",
+                    "src": "172:6:1"
+                  }
+                ],
+                "id": 44,
+                "name": "VariableDeclaration",
+                "src": "172:14:1"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "images",
+                  "scope": 47,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 45,
+                    "name": "ElementaryTypeName",
+                    "src": "193:6:1"
+                  }
+                ],
+                "id": 46,
+                "name": "VariableDeclaration",
+                "src": "193:13:1"
+              }
+            ],
+            "id": 47,
+            "name": "StructDefinition",
+            "src": "118:94:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "wikiMap",
+              "scope": 103,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => struct Wikipedia.wiki)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => struct Wikipedia.wiki)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 48,
+                    "name": "ElementaryTypeName",
+                    "src": "226:4:1"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "wiki",
+                      "referencedDeclaration": 47,
+                      "type": "struct Wikipedia.wiki"
+                    },
+                    "id": 49,
+                    "name": "UserDefinedTypeName",
+                    "src": "234:4:1"
+                  }
+                ],
+                "id": 50,
+                "name": "Mapping",
+                "src": "218:21:1"
+              }
+            ],
+            "id": 51,
+            "name": "VariableDeclaration",
+            "src": "218:36:1"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "wikiCreated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "id",
+                      "scope": 61,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 52,
+                        "name": "ElementaryTypeName",
+                        "src": "285:4:1"
+                      }
+                    ],
+                    "id": 53,
+                    "name": "VariableDeclaration",
+                    "src": "285:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "heading",
+                      "scope": 61,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 54,
+                        "name": "ElementaryTypeName",
+                        "src": "299:6:1"
+                      }
+                    ],
+                    "id": 55,
+                    "name": "VariableDeclaration",
+                    "src": "299:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "content",
+                      "scope": 61,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 56,
+                        "name": "ElementaryTypeName",
+                        "src": "320:6:1"
+                      }
+                    ],
+                    "id": 57,
+                    "name": "VariableDeclaration",
+                    "src": "320:14:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "images",
+                      "scope": 61,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 58,
+                        "name": "ElementaryTypeName",
+                        "src": "341:6:1"
+                      }
+                    ],
+                    "id": 59,
+                    "name": "VariableDeclaration",
+                    "src": "341:13:1"
+                  }
+                ],
+                "id": 60,
+                "name": "ParameterList",
+                "src": "278:81:1"
+              }
+            ],
+            "id": 61,
+            "name": "EventDefinition",
+            "src": "261:99:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 103,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 62,
+                "name": "ParameterList",
+                "src": "377:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 63,
+                "name": "ParameterList",
+                "src": "387:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_173f39244738b105fa912e9df40f93b31e6697e19df000fed9f5fff1b0d09add",
+                                  "typeString": "literal_string \"Milky Way\""
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_748f95a39f3316bf5a708064d7eeb41225d23527c4c38bbb46504552c1b389d7",
+                                  "typeString": "literal_string \"It is estimated to contain 100–400 billion stars and at least that number of planets.The Solar System is located at a radius of about 27,000 light-years from the Galactic Center, on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust. The stars in the innermost 10,000 light-years form a bulge and one or more bars that radiate from the bulge. The galactic center is an intense radio source known as Sagittarius A*, asupermassive black hole of 4.100 (± 0.034) million solar masses. Stars and gases at a wide range of distances from the Galactic Center orbit at approximately 220 kilometers per second. The constant rotation speed contradicts the laws of Keplerian dynamics and suggests that much (about 90%) of the mass of the Milky Way is invisible to telescopes, neither emitting nor absorbing electromagnetic radiation. This conjectural mass has been termed dark matter. The rotational period is about 240 million years at the radius of the Sun. The Milky Way as a whole is moving at a velocity of approximately 600 km per second with respect to extragalactic frames of reference. The oldest stars in the Milky Way are nearly as old as the Universe itself and thus probably formed shortly after the Dark Ages of the Big Bang.\""
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_246c219d7d5e4988b5c5598deebcf205054765a8bbb3fdd96f86a93543266503",
+                                  "typeString": "literal_string \"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 102,
+                              "type": "function (string memory,string memory,string memory)",
+                              "value": "createWiki"
+                            },
+                            "id": 64,
+                            "name": "Identifier",
+                            "src": "394:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4d696c6b7920576179",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Milky Way\"",
+                              "value": "Milky Way"
+                            },
+                            "id": 65,
+                            "name": "Literal",
+                            "src": "405:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "497420697320657374696d6174656420746f20636f6e7461696e20313030e280933430302062696c6c696f6e20737461727320616e64206174206c656173742074686174206e756d626572206f6620706c616e6574732e54686520536f6c61722053797374656d206973206c6f6361746564206174206120726164697573206f662061626f75742032372c303030206c696768742d79656172732066726f6d207468652047616c61637469632043656e7465722c206f6e2074686520696e6e65722065646765206f6620746865204f72696f6e2041726d2c206f6e65206f66207468652073706972616c2d73686170656420636f6e63656e74726174696f6e73206f662067617320616e6420647573742e2054686520737461727320696e2074686520696e6e65726d6f73742031302c303030206c696768742d796561727320666f726d20612062756c676520616e64206f6e65206f72206d6f72652062617273207468617420726164696174652066726f6d207468652062756c67652e205468652067616c61637469632063656e74657220697320616e20696e74656e736520726164696f20736f75726365206b6e6f776e20617320536167697474617269757320412a2c206173757065726d61737369766520626c61636b20686f6c65206f6620342e3130302028c2b120302e30333429206d696c6c696f6e20736f6c6172206d61737365732e20537461727320616e64206761736573206174206120776964652072616e6765206f662064697374616e6365732066726f6d207468652047616c61637469632043656e746572206f7262697420617420617070726f78696d6174656c7920323230206b696c6f6d657465727320706572207365636f6e642e2054686520636f6e7374616e7420726f746174696f6e20737065656420636f6e747261646963747320746865206c617773206f66204b65706c657269616e2064796e616d69637320616e642073756767657374732074686174206d756368202861626f75742039302529206f6620746865206d617373206f6620746865204d696c6b792057617920697320696e76697369626c6520746f2074656c6573636f7065732c206e65697468657220656d697474696e67206e6f72206162736f7262696e6720656c656374726f6d61676e6574696320726164696174696f6e2e205468697320636f6e6a6563747572616c206d61737320686173206265656e207465726d6564206461726b206d61747465722e2054686520726f746174696f6e616c20706572696f642069732061626f757420323430206d696c6c696f6e2079656172732061742074686520726164697573206f66207468652053756e2e20546865204d696c6b792057617920617320612077686f6c65206973206d6f76696e6720617420612076656c6f63697479206f6620617070726f78696d6174656c7920363030206b6d20706572207365636f6e642077697468207265737065637420746f20657874726167616c6163746963206672616d6573206f66207265666572656e63652e20546865206f6c6465737420737461727320696e20746865204d696c6b792057617920617265206e6561726c79206173206f6c642061732074686520556e69766572736520697473656c6620616e6420746875732070726f6261626c7920666f726d65642073686f72746c7920616674657220746865204461726b2041676573206f6620746865204269672042616e672e",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"It is estimated to contain 100–400 billion stars and at least that number of planets.The Solar System is located at a radius of about 27,000 light-years from the Galactic Center, on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust. The stars in the innermost 10,000 light-years form a bulge and one or more bars that radiate from the bulge. The galactic center is an intense radio source known as Sagittarius A*, asupermassive black hole of 4.100 (± 0.034) million solar masses. Stars and gases at a wide range of distances from the Galactic Center orbit at approximately 220 kilometers per second. The constant rotation speed contradicts the laws of Keplerian dynamics and suggests that much (about 90%) of the mass of the Milky Way is invisible to telescopes, neither emitting nor absorbing electromagnetic radiation. This conjectural mass has been termed dark matter. The rotational period is about 240 million years at the radius of the Sun. The Milky Way as a whole is moving at a velocity of approximately 600 km per second with respect to extragalactic frames of reference. The oldest stars in the Milky Way are nearly as old as the Universe itself and thus probably formed shortly after the Dark Ages of the Big Bang.\"",
+                              "value": "It is estimated to contain 100–400 billion stars and at least that number of planets.The Solar System is located at a radius of about 27,000 light-years from the Galactic Center, on the inner edge of the Orion Arm, one of the spiral-shaped concentrations of gas and dust. The stars in the innermost 10,000 light-years form a bulge and one or more bars that radiate from the bulge. The galactic center is an intense radio source known as Sagittarius A*, asupermassive black hole of 4.100 (± 0.034) million solar masses. Stars and gases at a wide range of distances from the Galactic Center orbit at approximately 220 kilometers per second. The constant rotation speed contradicts the laws of Keplerian dynamics and suggests that much (about 90%) of the mass of the Milky Way is invisible to telescopes, neither emitting nor absorbing electromagnetic radiation. This conjectural mass has been termed dark matter. The rotational period is about 240 million years at the radius of the Sun. The Milky Way as a whole is moving at a velocity of approximately 600 km per second with respect to extragalactic frames of reference. The oldest stars in the Milky Way are nearly as old as the Universe itself and thus probably formed shortly after the Dark Ages of the Big Bang."
+                            },
+                            "id": 66,
+                            "name": "Literal",
+                            "src": "417:1270:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "68747470733a2f2f63646e2e706978616261792e636f6d2f70686f746f2f323031352f30342f32332f32322f30302f747265652d3733363838355f5f3438302e6a7067",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg\"",
+                              "value": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+                            },
+                            "id": 67,
+                            "name": "Literal",
+                            "src": "1688:69:1"
+                          }
+                        ],
+                        "id": 68,
+                        "name": "FunctionCall",
+                        "src": "394:1364:1"
+                      }
+                    ],
+                    "id": 69,
+                    "name": "ExpressionStatement",
+                    "src": "394:1364:1"
+                  }
+                ],
+                "id": 70,
+                "name": "Block",
+                "src": "387:1377:1"
+              }
+            ],
+            "id": 71,
+            "name": "FunctionDefinition",
+            "src": "366:1398:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createWiki",
+              "scope": 103,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_header",
+                      "scope": 102,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 72,
+                        "name": "ElementaryTypeName",
+                        "src": "1790:6:1"
+                      }
+                    ],
+                    "id": 73,
+                    "name": "VariableDeclaration",
+                    "src": "1790:21:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_content",
+                      "scope": 102,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 74,
+                        "name": "ElementaryTypeName",
+                        "src": "1813:6:1"
+                      }
+                    ],
+                    "id": 75,
+                    "name": "VariableDeclaration",
+                    "src": "1813:22:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_images",
+                      "scope": 102,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 76,
+                        "name": "ElementaryTypeName",
+                        "src": "1837:6:1"
+                      }
+                    ],
+                    "id": 77,
+                    "name": "VariableDeclaration",
+                    "src": "1837:21:1"
+                  }
+                ],
+                "id": 78,
+                "name": "ParameterList",
+                "src": "1789:70:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 79,
+                "name": "ParameterList",
+                "src": "1867:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 38,
+                              "type": "uint256",
+                              "value": "wikiCount"
+                            },
+                            "id": 80,
+                            "name": "Identifier",
+                            "src": "1874:9:1"
+                          }
+                        ],
+                        "id": 81,
+                        "name": "UnaryOperation",
+                        "src": "1874:11:1"
+                      }
+                    ],
+                    "id": 82,
+                    "name": "ExpressionStatement",
+                    "src": "1874:11:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct Wikipedia.wiki storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct Wikipedia.wiki storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 51,
+                                  "type": "mapping(uint256 => struct Wikipedia.wiki storage ref)",
+                                  "value": "wikiMap"
+                                },
+                                "id": 83,
+                                "name": "Identifier",
+                                "src": "1892:7:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 38,
+                                  "type": "uint256",
+                                  "value": "wikiCount"
+                                },
+                                "id": 84,
+                                "name": "Identifier",
+                                "src": "1900:9:1"
+                              }
+                            ],
+                            "id": 85,
+                            "name": "IndexAccess",
+                            "src": "1892:18:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct Wikipedia.wiki memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 47,
+                                  "type": "type(struct Wikipedia.wiki storage pointer)",
+                                  "value": "wiki"
+                                },
+                                "id": 86,
+                                "name": "Identifier",
+                                "src": "1913:4:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 38,
+                                  "type": "uint256",
+                                  "value": "wikiCount"
+                                },
+                                "id": 87,
+                                "name": "Identifier",
+                                "src": "1918:9:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 73,
+                                  "type": "string memory",
+                                  "value": "_header"
+                                },
+                                "id": 88,
+                                "name": "Identifier",
+                                "src": "1929:7:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 75,
+                                  "type": "string memory",
+                                  "value": "_content"
+                                },
+                                "id": 89,
+                                "name": "Identifier",
+                                "src": "1938:8:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 77,
+                                  "type": "string memory",
+                                  "value": "_images"
+                                },
+                                "id": 90,
+                                "name": "Identifier",
+                                "src": "1948:7:1"
+                              }
+                            ],
+                            "id": 91,
+                            "name": "FunctionCall",
+                            "src": "1913:43:1"
+                          }
+                        ],
+                        "id": 92,
+                        "name": "Assignment",
+                        "src": "1892:64:1"
+                      }
+                    ],
+                    "id": 93,
+                    "name": "ExpressionStatement",
+                    "src": "1892:64:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 61,
+                              "type": "function (uint256,string memory,string memory,string memory)",
+                              "value": "wikiCreated"
+                            },
+                            "id": 94,
+                            "name": "Identifier",
+                            "src": "1968:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 38,
+                              "type": "uint256",
+                              "value": "wikiCount"
+                            },
+                            "id": 95,
+                            "name": "Identifier",
+                            "src": "1980:9:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 73,
+                              "type": "string memory",
+                              "value": "_header"
+                            },
+                            "id": 96,
+                            "name": "Identifier",
+                            "src": "1991:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 75,
+                              "type": "string memory",
+                              "value": "_content"
+                            },
+                            "id": 97,
+                            "name": "Identifier",
+                            "src": "2000:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 77,
+                              "type": "string memory",
+                              "value": "_images"
+                            },
+                            "id": 98,
+                            "name": "Identifier",
+                            "src": "2010:7:1"
+                          }
+                        ],
+                        "id": 99,
+                        "name": "FunctionCall",
+                        "src": "1968:50:1"
+                      }
+                    ],
+                    "id": 100,
+                    "name": "EmitStatement",
+                    "src": "1963:55:1"
+                  }
+                ],
+                "id": 101,
+                "name": "Block",
+                "src": "1867:157:1"
+              }
+            ],
+            "id": 102,
+            "name": "FunctionDefinition",
+            "src": "1770:254:1"
+          }
+        ],
+        "id": 103,
+        "name": "ContractDefinition",
+        "src": "62:1967:1"
+      }
+    ],
+    "id": 104,
+    "name": "SourceUnit",
+    "src": "0:2031:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xa18013dc88ccdacbf8b6225298a80b7a2a8b96f6a4a2fe5bbaa310d02cfe3ebb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "content",
+              "type": "string[1]"
+            },
+            {
+              "indexed": false,
+              "name": "images",
+              "type": "string[1]"
+            }
+          ],
+          "name": "wikiCreated",
+          "type": "event"
+        },
+        "0xf953a88277f0ae06bdc0f2f8cee7c026db5180857d7a9ca55ecfc25b3e03e815": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "images",
+              "type": "string"
+            }
+          ],
+          "name": "wikiCreated",
+          "type": "event"
+        },
+        "0x30cb0e8cb076b725d56bc448c80136c801e50de7d0df7b67e636a6145428f824": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "heading",
+              "type": "string",
+              "internalType": "string"
+            },
+            {
+              "indexed": false,
+              "name": "content",
+              "type": "string",
+              "internalType": "string"
+            },
+            {
+              "indexed": false,
+              "name": "images",
+              "type": "string",
+              "internalType": "string"
+            }
+          ],
+          "name": "wikiCreated",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x9Dd08E6089DD17319dbC22B6C0B8465E00Ee4359",
+      "transactionHash": "0xc52cfae4b4f276e2296e042700b4b5de4576a21788aba72ddcf59588259530e6"
+    }
+  },
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-04-03T02:55:41.428Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

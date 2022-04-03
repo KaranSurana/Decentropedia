@@ -1,0 +1,228 @@
+* {box-sizing: border-box;}
+
+body{overflow-x: hidden;}
+
+.image{
+    width: 25vw; 
+    height: 35vh; 
+    position: relative; 
+    top: 2.5vh;
+    padding: 15px;
+    background-color: #111111;
+}
+
+#imagePreview{
+    height: 35vh; 
+    width: 30vw;
+    display: inline-block;
+}
+
+.heading{
+    position: relative; 
+    left: 2.2%;
+}
+
+.content{
+    position: relative; 
+    left: 3.4%; 
+    width: 60vw; 
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.content img{
+  width: 25vw; 
+    height: 35vh;
+    position: relative;
+    left: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#suggestions div{
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+#suggestions p{
+padding: 10px;
+font-family: Arial, Helvetica, sans-serif;
+cursor: pointer;
+display: inline-block;
+}
+#suggestions i{
+cursor: pointer;
+display: inline-block;
+position: relative;
+top: 25px;
+left: -10px;
+}
+
+.open-button {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: relative;
+    left: 90vw;
+    border-radius: 12px;
+    top: -10vh;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 12vh;
+    left: 15vw;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    width: 75vw;
+    height: 75vh;
+    padding: 10px;
+    background-color: white;
+    overflow-y: scroll;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], textarea {
+      font-family: monospace;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    overflow-x: hidden;
+    text-align: justify;
+  }
+  
+  #searchbar{
+    width: 40vw; height: 5.5vh; border-radius: 7px; background-color: rgb(12, 12, 12); border: none;
+    position: relative;
+    top: -39px;
+    left: 20vw;
+    color: white;
+  }
+
+
+  textarea{
+      height: 30vh;
+  }
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #25b17d;
+    color: white;
+    padding: 16px 0px;
+    border: none;
+    cursor: pointer;
+    width: 44%;
+    margin-top: 40px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .form-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  #suggestions p{
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+body{
+  margin: 0;
+  background-color: rgb(7, 7, 7);
+  color: white;
+}
+
+.previewContent{
+  width: 76.2vw;
+  height: 76.5vh;
+  padding: 10px;
+  background-color: black;
+  position: absolute;
+  top: 1.5%;
+  left: 14.5%;
+  z-index: 30;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.previewContent{
+  text-align: justify;
+}
+.previewContent img{
+  width: 25vw; 
+  height: 35vh;
+  position: relative;
+  left: 32%;
+  z-index: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.closePreview{
+  background-color: red;
+  height: 38px;
+  width: 140px;
+  padding: 10px;
+  padding-left: 18px;
+  position: relative;
+  left: 85%;
+  top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.previewContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.previewContent::-webkit-scrollbar-track {
+  background: #817b7b; 
+}
+ 
+/* Handle */
+.previewContent::-webkit-scrollbar-thumb {
+  background: rgb(49, 49, 49); 
+}
+
+/* Handle on hover */
+.previewContent::-webkit-scrollbar-thumb:hover {
+  background: rgb(17, 17, 17); 
+}

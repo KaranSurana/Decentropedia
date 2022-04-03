@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="content.css">
+    <link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+    <header style=" background-color: black; height: 15vh;">
+        <a href="/"><img src="logo.png" height="100px" alt=""></a>
+        <a style="font-size:large; color: white; position: relative; left: 76%; top: -32px; text-decoration: none;" href="./docs.html">Docs</a>
+        <input id="searchbar" placeholder="&nbsp;Search..." oninput="App.getValues()" type="text">
+        <div style="position: relative; z-index: 20; color: white; width: 39.5vw; left: 31.5%; top: -35px; background-color: rgb(12, 12, 12);" id="suggestions"> </div>
+        <button style="position: absolute; top: 45px;" class="open-button" onclick="openForm()">Create</button>
+    </header>
+
+    <div style="font-family: Arial, Helvetica, sans-serif;" class="form-popup" id="myForm">
+        <form onSubmit="App.createTask(); return false;" class="form-container">
+            <h1 style="color: black;">Add a Page</h1>
+
+            <label style="color: black;" for="email"><b>Heading</b></label>
+            <input id="header" type="text" placeholder="Enter Heading..." name="email" required>
+
+            <label style="color: black;" for="psw"><b>Content</b></label><br>
+            <textarea id="contentt" name="psw" rows="4" cols="50" placeholder="Enter Content..." required></textarea>
+
+            <label style="color: rgb(138, 138, 138); position: relative; top: -63px; left: 10px;">*Content Area supports
+                HTML tags for editing</label>
+            <button class="btn" type="button" onclick="previewContent()"
+                style="background-color: dodgerblue; width: 20%; position: relative; left: 50%; top: -55px;">Content
+                Preview</button><br><br>
+            <div
+                style="padding: 20px; display: inline-block; height: 40vh; width: 32.7vw; background-color: #ddd; position: relative; top: -45px; left: 60px;">
+                <img id="imagePreview" src="" alt="" onerror="this.style.display='none'">
+            </div>
+            <label style="position: relative; left: 70px; top: -300px; color: black;"><b>Image URL</b></label>
+            <input id="imagevalue" style="width: 30vw; position: relative; left: -14px; top: -250px;" type="text"
+                required>
+            <button onclick="imagepreview()" class="btn" type="button"
+                style=" width: 20%;position: relative; left: 51.4%; top: -290px; background-color: dodgerblue;">Image
+                Preview</button>
+
+
+
+            <button style="position: relative; left: -140px; top: -50px;" type="submit" class="btn">Post</button>
+            <button style="position: relative; left: 590px; top: -137.5px; z-index: 10;" type="button"
+                class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+
+    <h1 class="heading"></h1>
+    <div style="display: flex;">
+        <div style="width: 65vw;">
+
+            <p class="content">
+            </p>
+        </div>
+
+        <img class="image" src="" alt="Image">
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/web3/dist/web3.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="content.js"></script>
+</body>
+</html>

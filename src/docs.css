@@ -1,0 +1,23 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: default;
+    
+}
+
+li{
+    margin-top: 20px;
+}
+div{
+    display: grid;
+    place-items: center;
+    position: relative;
+    left: 25%;
+    top: 120px;
+    width: 50vw;
+    height: 55vh;
+    background-color: rgb(17, 17, 17);
+    padding-bottom: 50px;
+    padding-top: 20px;
+}

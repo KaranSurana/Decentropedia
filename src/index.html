@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Wikipedia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+    <header style=" background-color: black; height: 15vh;">
+        <a href="/"><img src="logo.png" height="100px" alt=""></a>
+        <a style="font-size:large; color: white; position: relative; left: 76%; top: -32px; text-decoration: none;" href="./docs.html">Docs</a>
+        <input id="searchbar" placeholder="&nbsp;Search..." oninput="App.getValues()" type="text">
+        <div style="position: relative; z-index: 20; color: white; width: 39.5vw; left: 31.5%; top: -35px; background-color: rgb(12, 12, 12);" id="suggestions"> </div>
+        
+        <button style="position: absolute; top: 45px;" class="open-button" onclick="openForm()">Create</button>
+
+
+    </header>
+
+    <div style="font-family: Arial, Helvetica, sans-serif;" class="form-popup" id="myForm">
+        <form onSubmit="App.createTask(); return false;" class="form-container">
+            <h1 style="color: black;">Add a Page</h1>
+
+            <label style="color: black;" for="email"><b>Heading</b></label>
+            <input id="header" type="text" placeholder="Enter Heading..." name="email" required>
+
+            <label style="color: black;" for="psw"><b>Content</b></label><br>
+            <textarea id="contentt" name="psw" rows="4" cols="50" placeholder="Enter Content..." required></textarea>
+
+            <label style="color: rgb(138, 138, 138); position: relative; top: -63px; left: 10px;">*Content Area supports
+                HTML tags for editing</label>
+            <button class="btn" onclick="previewContent()" type="button"
+                style="background-color: dodgerblue; width: 20%; position: relative; left: 50%; top: -55px;">Content
+                Preview</button><br><br>
+            <div
+                style="padding: 20px; display: inline-block; height: 40vh; width: 32.7vw; background-color: #ddd; position: relative; top: -45px; left: 60px;">
+                <img id="imagePreview" src="" alt="" onerror="this.style.display='none'">
+            </div>
+            <label style="position: relative; left: 70px; top: -300px; color: black;"><b>Image URL</b></label>
+            <input id="imagevalue" style="width: 30vw; position: relative; left: -14px; top: -250px;" type="text"
+                required>
+            <button onclick="imagepreview()" class="btn" type="button"
+                style=" width: 20%;position: relative; left: 51.4%; top: -290px; background-color: dodgerblue;">Image
+                Preview</button>
+
+
+
+            <button style="position: relative; left: -140px; top: -50px;" type="submit" class="btn">Post</button>
+            <button style="position: relative; left: 590px; top: -137.5px; z-index: 10;" type="button"
+                class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <!-- <h1 class="heading"></h1>
+    <div style="display: flex;">
+        <div style="width: 65vw;">
+
+            <p class="content">
+            </p>
+        </div>
+
+        <img class="image" src="" alt="Image">
+
+    </div> -->
+    <div class="container demo" style="position: relative; z-index: 0;">
+        <div class="content">
+            <div id="large-header" class="large-header" style="position: relative; left: -40px; width: 100vw;">
+                <canvas id="demo-canvas"></canvas>
+                <h1 style="top: 28%; margin-left: -20vw; text-align: left; caret-color: black;"
+                    class="main-title typing-demo"><span class="thin">Decentralized</span></h1>
+                <h1 style="top: 39%; margin-left: -27.5vw;" id="second-heading" class="main-title">WIKIPEDIA</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="sun"></div>
+        <div class="earth"></div>
+    </div>
+
+
+    <section class="section">
+        <div class="space">
+            <div class="space__comet-container">
+                <div class="space__comet"></div>
+            </div>
+
+            <button class="button js-animate">Animate</button>
+        </div>
+    </section>
+
+    <div id="whydecen">
+        <div>
+            <h1 style="position: relative; left: 32%; font-family: Arial, Helvetica, sans-serif;">Why Decentropedia?
+            </h1>
+            <br>
+            <i style="display: inline-block; font-size: 125px; position: relative; left: 80px;" class="fas fa-shield-alt"></i>
+            <h3 style="display: inline-block; font-family: Arial, Helvetica, sans-serif; position: relative; left: 98px; top: -80px;">Augmented Security</h3>
+            <p style="width: 45vw; text-align: justify; position: relative; left: 225px; top: -100px;">Our data is sensitive and critical, and blockchain has the potential to substantially alter how your key
+                information is seen. Data is stored over a network of computers rather than on a single
+                server, making data access difficult for hackers.</p>
+
+        </div>
+
+        <div>
+            <i style="display: inline-block; font-size: 110px; position: relative; left: 80px;" class="fas fa-tachometer-alt"></i>
+            <h3 style="display: inline-block; font-family: Arial, Helvetica, sans-serif; position: relative; left: 98px; top: -80px;">Improved efficiency and speed
+            </h3>
+
+            <p style="width: 45vw; text-align: justify; position: relative; left: 225px; top: -100px;">Traditional paper-intensive procedures are time-consuming, prone to human error, and frequently need the
+                intervention of a third party. Transactions may be conducted faster and more efficiently by optimising
+                these
+                procedures using blockchain.</p>
+        </div>
+
+        <div>
+            <i style="display: inline-block; font-size: 125px; position: relative; left: 80px;" class="fas fa-server"></i>
+            <h3 style="display: inline-block; font-family: Arial, Helvetica, sans-serif; position: relative; left: 98px; top: -80px;">Automation
+            </h3>
+            <p style="width: 45vw; text-align: justify; position: relative; left: 225px; top: -100px;">Trades can also be digitized with "smart contracts," increasing your efficiency and speeding up the
+                process even
+                more. Smart contracts decrease the need for human involvement as well as reliance on third parties to
+                ensure
+                that contract requirements are honoured.</p>
+
+        </div>
+
+
+    </div>
+    <section class="section">
+        <div class="space">
+            <div style="position: relative; top: -160vh;" class="space__rocket-container">
+                <div class="space__rocket">
+                    <div class="space__rocket-body"></div>
+                    <div class="space__rocket-fin"></div>
+                    <div class="space__rocket-smoke">
+                        <div class="space__rocket-poof"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="button js-animate">Animate</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="space">
+            <div style="position: relative; top: -243vh;" class="space__planet-container">
+                <div class="space__planet "></div>
+            </div>
+
+            <button class="button js-animate">Animate</button>
+        </div>
+    </section>
+
+    <div id="contactus">
+        <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 45px; position: relative; left: 37%; top: 5%;">Contact Us</h1>
+        <div class="social-menu">
+            <ul>
+                <li><a href="https://github.com/" target="blank"><i class="fab fa-github"></i></i></a></li>
+                <li><a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/" target="blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="mailto" target="blank"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://twitter.com" target="blank"><i class="fab fa-twitter twitter"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <section class="section">
+        <div class="space">
+            <div style="position: relative; top: -355vh; left: 19%;" class="space__satellite-container">
+                <div class="space__satellite-transmission"></div>
+                <div class="space__satellite-top"></div>
+                <div class="space__satellite"></div>
+                <div class="space__satellite-wings"></div>
+            </div>
+
+            <button class="button js-animate">Animate</button>
+        </div>
+    </section>
+    <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 45px; position: relative; left: 43%; top: -375vh;">Stay Decentralized!</h1>
+    
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/web3/dist/web3.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+    <script>
+        $('textarea').on('keydown', function(e) {
+            if (e.keyCode == 9) {
+                $(this).focus();
+                e.preventDefault();
+            }
+        });
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        function imagepreview() {
+            console.log(document.getElementById("imagevalue").value);
+            document.getElementById("imagePreview").style.display = "block";
+            document.getElementById("imagePreview").src = document.getElementById("imagevalue").value;
+        }
+        document.getElementById("contentt").addEventListener('keydown', function (e) {
+            if(e.key=="Enter"){
+                document.getElementById("contentt").value=document.getElementById("contentt").value+"<br>"
+            }
+            if(e.key=="Tab"){
+                
+                if(document.getElementById("contentt").value.slice(-2)=="h1"){
+                    document.getElementById("contentt").value=document.getElementById("contentt").value.slice(0,-2)+"<h1></h1>"
+                }
+                if(document.getElementById("contentt").value.slice(-2)=="h2"){
+                    document.getElementById("contentt").value=document.getElementById("contentt").value.slice(0,-2)+"<h2></h2>"
+                }
+                if(document.getElementById("contentt").value.slice(-2)=="h3"){
+                    document.getElementById("contentt").value=document.getElementById("contentt").value.slice(0,-2)+"<h3></h3>"
+                }
+                if(document.getElementById("contentt").value.slice(-2)=="h4"){
+                    document.getElementById("contentt").value=document.getElementById("contentt").value.slice(0,-2)+"<h4></h4>"
+                }
+                if(document.getElementById("contentt").value.slice(-2)=="h5"){
+                    document.getElementById("contentt").value=document.getElementById("contentt").value.slice(0,-2)+"<h5></h5>"
+                }
+                if(document.getElementById("contentt").value.slice(-2)=="h6"){
+                    document.getElementById("contentt").value=document.getElementById("contentt").value.slice(0,-2)+"<h6></h6>"
+                }
+                if(document.getElementById("contentt").value.slice(-3)=="img"){
+                    document.getElementById("contentt").value=document.getElementById("contentt").value.slice(0,-3)+'<img src="">';
+                }
+            }
+        }, false);
+
+        function previewContent(){
+            if(document.getElementById("contentt").value==""){
+                return;
+            }
+            var div = document.createElement("DIV");
+            div.classList.add("previewContent");
+            document.body.appendChild(div) 
+            div.innerHTML=document.getElementById("contentt").value;
+            var div2 = document.createElement("DIV");
+            div2.innerText='Close Preview';
+            div2.classList.add("closePreview");
+            div.appendChild(div2);
+            div2.addEventListener('click',function(){
+                $( ".previewContent" ).remove();
+            })
+        }
+    </script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+</body>
+
+</html>
